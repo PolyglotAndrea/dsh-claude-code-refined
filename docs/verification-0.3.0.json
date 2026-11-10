@@ -1,0 +1,52 @@
+{
+  "version": "0.3.0",
+  "verification_date": "2026-11-09",
+  "timezone": "America/Los_Angeles",
+  "target": {
+    "harness": "0.2.2-rc.1",
+    "base_theme": "0.19.7"
+  },
+  "build": {
+    "result": "passed",
+    "checks": [
+      "npm run build",
+      "npm pack",
+      "esbuild parsed process.css and interaction.css without warnings"
+    ],
+    "bundle_sha256": "2e25a026acae6b5468c1c3498e281aeee7ef299c642e8bb759a4819161e7f6e4"
+  },
+  "component_preview": {
+    "method": "CUA browser interaction with extracted host React components, base theme CSS, mock primitives, example data and local mock callbacks",
+    "passed": [
+      "Single selection advances to the next question and preserves the chosen answer",
+      "Free-text answer is included in the simulated submission",
+      "Simulated submission failure displays an error and retains the answer for retry",
+      "Retry enters the native submitting and disabled state",
+      "Approval card shows waiting state and separate reject / allow-once buttons",
+      "Mock rejection returns rejected and disables subsequent approval",
+      "Plan review shows view-plan, request-changes and approve actions",
+      "Reasoning disclosure expands and shows indented secondary text",
+      "Visual inspection in light and dark schemes, including a 390px content container"
+    ],
+    "limitations": [
+      "No real approval, model call or task was submitted for testing",
+      "Multi-select, persistent approval, countdown and plan execution were not exercised",
+      "A narrow content container was checked; the actual viewport breakpoint was not tested",
+      "Mock primitive icons and translation context differ from the native app"
+    ]
+  },
+  "desktop": {
+    "installed_version": "0.3.0",
+    "bundle_matches_package": true,
+    "delivery": "Installed into desktop profile; existing client module updated through host HMR",
+    "observed": [
+      "Native live conversation shows compact process summary and thin left grouping rule",
+      "Expanded reasoning uses indented secondary text without the old outer box",
+      "Background job remains running after hot update",
+      "Main app and backend process IDs remain unchanged"
+    ],
+    "restarted": false,
+    "limitations": "Native HITL panels were not triggered in the ongoing user task; their interaction checks used the isolated component preview"
+  },
+  "scope": "CSS-only changes. Previous 0.2.0 results are not treated as fresh 0.3.0 tests. No full regression of unrelated surfaces or third-party plugin combinations."
+}

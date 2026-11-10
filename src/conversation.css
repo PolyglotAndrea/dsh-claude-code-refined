@@ -1,0 +1,83 @@
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='conversation-header'] {
+  border-bottom: 1px solid var(--cc-border);
+  background: var(--cc-canvas);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-chat-flow-kind='user'] [data-message-bubble] {
+  background: var(--cc-inset) !important;
+  color: var(--cc-ink);
+  border: 1px solid var(--cc-border) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  padding: 12px 16px !important;
+  font-family: var(--cc-ui) !important;
+  line-height: 1.65;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] {
+  line-height: 1.7 !important;
+  overflow-wrap: anywhere;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] :is(h1, h2, h3, h4) {
+  margin-block: 24px 10px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] h1 {
+  font-size: calc(var(--dsh-content-font-size, 14px) + 8px);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] h2 {
+  font-size: calc(var(--dsh-content-font-size, 14px) + 5px);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] h3 {
+  font-size: calc(var(--dsh-content-font-size, 14px) + 2px);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] :is(ul, ol) {
+  padding-inline-start: 22px;
+  margin-block: 10px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] li {
+  padding-inline-start: 3px;
+  margin-block: 4px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] blockquote {
+  margin-inline: 0;
+  padding: 4px 16px;
+  border-left: 3px solid var(--cc-border-strong);
+  color: var(--cc-muted);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] .md-code-block {
+  border: 1px solid var(--cc-border) !important;
+  border-radius: 10px !important;
+  background: var(--cc-code);
+  box-shadow: none !important;
+  overflow: hidden;
+  margin-block: 14px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] .md-code-block pre {
+  padding: 14px 16px;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+  border-radius: 0;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] code:not(pre code) {
+  padding: 2px 5px;
+  border: 1px solid var(--cc-border);
+  border-radius: 4px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-step-process-content] [data-disclosure-row] {
+  border-radius: 5px;
+  font-size: calc(var(--dsh-content-font-size, 14px) - 1px);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-step-process-content] [data-disclosure-row]:hover {
+  background: color-mix(in srgb, var(--cc-hover) 55%, transparent);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think'] [data-dsh-claude-part~='markdown'] {
+  color: var(--cc-muted);
+  line-height: 1.6 !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] :is(th, td) {
+  padding: 9px 12px;
+  border-color: var(--cc-border);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] th {
+  background: var(--cc-inset);
+  font-weight: 600;
+}

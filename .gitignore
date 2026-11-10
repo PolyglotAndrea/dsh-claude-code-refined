@@ -1,0 +1,10 @@
+node_modules/
+.debug/
+dist/
+*.tgz
+.DS_Store
+.env
+.env.*
+*.log
+__pycache__/
+*.pyc

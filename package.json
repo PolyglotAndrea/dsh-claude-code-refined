@@ -1,0 +1,67 @@
+{
+  "name": "dsh-claude-code-refined",
+  "version": "0.3.0",
+  "description": "Claude Code Refined — a warm, quiet desktop refinement for dsh-claude-style 0.19.7",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolyglotAndrea/dsh-claude-code-refined.git"
+  },
+  "homepage": "https://github.com/PolyglotAndrea/dsh-claude-code-refined#readme",
+  "bugs": {
+    "url": "https://github.com/PolyglotAndrea/dsh-claude-code-refined/issues"
+  },
+  "main": "./lib/host.js",
+  "exports": {
+    ".": "./lib/host.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*": "./locale/*"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "dsh-claude-style"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "dsh-claude-style": "0.19.7"
+  },
+  "files": [
+    "lib",
+    "src",
+    "scripts/build.mjs",
+    "locale",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node tests/browser.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:desktop": "node tests/desktop-surfaces.mjs --installed",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "theme",
+    "claude-code"
+  ]
+}

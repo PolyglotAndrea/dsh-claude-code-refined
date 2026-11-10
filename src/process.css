@@ -1,0 +1,77 @@
+/* Use the host's disclosure/state attributes. No generated status copy, forced
+   expansion, or changes to the underlying reasoning and permission policies. */
+body[data-dsh-code-refined][data-dsh-claude-style] :is(button[data-turn-process], button[data-process-activity]) {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 30px;
+  height: auto !important;
+  padding: 5px 7px !important;
+  margin-inline-start: -7px;
+  border: 0 !important;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cc-muted);
+  font: 400 var(--dsh-content-font-size-secondary, 13px)/20px var(--cc-ui) !important;
+  box-shadow: none !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is(button[data-turn-process], button[data-process-activity]):hover:not(:disabled) {
+  background: var(--cc-hover);
+  color: var(--cc-ink);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-step-process] > [data-step-process-body]:not([hidden]) {
+  border: 0 !important;
+  border-inline-start: 1px solid var(--cc-border) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 6px 0 8px 7px;
+  padding: 0 0 0 16px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-step-process-content] {
+  gap: 2px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-step-process-content] > [data-chat-flow-kind] {
+  border: 0 !important;
+  margin-block: 0 !important;
+  padding-inline: 0 !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-step-process-content], [data-variant='think']) [data-disclosure-row] {
+  box-sizing: border-box;
+  min-height: calc(30px + var(--dsh-content-font-delta, 0px));
+  padding-block: 4px;
+  border-radius: 5px;
+  font-family: var(--cc-ui) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think']:not([data-expanded]) {
+  height: calc(30px + var(--dsh-content-font-delta, 0px)) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-step-process-content], [data-variant='think']) [data-dsh-claude-part~='text-title'] {
+  font-family: var(--cc-ui) !important;
+  font-weight: 500 !important;
+  font-size: var(--dsh-content-font-size-secondary, 13px) !important;
+  letter-spacing: 0;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think'] {
+  color: var(--cc-muted);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think'] [data-disclosure-header] + div {
+  margin: 4px 0 10px 7px;
+  padding: 2px 8px 2px 15px !important;
+  border-inline-start: 1px solid var(--cc-border);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think'] [data-dsh-claude-part~='markdown'] {
+  font-size: var(--dsh-content-font-size-secondary, 13px) !important;
+  line-height: 1.65 !important;
+  color: var(--cc-muted) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think'] [data-dsh-claude-part~='markdown'] p {
+  margin-block: 6px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-variant='think'][data-state='running'] [data-disclosure-header] {
+  color: var(--cc-accent);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-step-process-content] pre {
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: var(--dsh-content-font-size-secondary, 13px);
+}

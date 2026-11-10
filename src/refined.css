@@ -1,0 +1,280 @@
+/* Companion to dsh-claude-style 0.19.7. All rules require both plugins.
+   Important declarations beat the base theme's high-specificity palette and
+   layout rules without changing its preferences, DOM, or inline geometry. */
+body[data-dsh-code-refined][data-dsh-claude-style] {
+  --cc-canvas: #faf9f5;
+  --cc-sidebar: #f0eee6;
+  --cc-surface: #ffffff;
+  --cc-inset: #f4f2eb;
+  --cc-hover: #e8e6dc;
+  --cc-border: #dedbd1;
+  --cc-border-strong: #c6c1b4;
+  --cc-ink: #292720;
+  --cc-muted: #625f55;
+  --cc-caption: #79756b;
+  --cc-accent: #c96442;
+  --cc-accent-hover: #ad5033;
+  --cc-code: #f2f0e9;
+  --cc-code-ink: #965039;
+  --cc-shadow: 0 2px 8px rgb(41 39 32 / 5%), 0 10px 28px rgb(41 39 32 / 3%);
+  --cc-ui: 'Anthropic Sans', 'Claude Style Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --cc-serif: 'Anthropic Serif', 'Claude Style Noto Serif', Georgia, 'Songti SC', serif;
+  --cc-mono: 'Anthropic Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --dsw-alias-bg-base: var(--cc-canvas) !important;
+  --dsw-alias-bg-layer-1: var(--cc-surface) !important;
+  --dsw-alias-bg-layer-2: var(--cc-inset) !important;
+  --dsw-alias-bg-layer-3: var(--cc-hover) !important;
+  --dsw-alias-bg-overlay: var(--cc-surface) !important;
+  --dsw-alias-label-primary: var(--cc-ink) !important;
+  --dsw-alias-label-secondary: var(--cc-muted) !important;
+  --dsw-alias-label-tertiary: var(--cc-caption) !important;
+  --dsw-alias-label-caption: var(--cc-caption) !important;
+  --dsw-alias-border-l1: var(--cc-border) !important;
+  --dsw-alias-border-l2: var(--cc-border-strong) !important;
+  --dsw-alias-border-l3: var(--cc-caption) !important;
+  --dsw-alias-brand-primary: var(--cc-accent) !important;
+  --dsw-alias-brand-text: #fff !important;
+  --dsw-alias-button-primary-fill: var(--cc-accent) !important;
+  --dsw-alias-button-primary-hover: var(--cc-accent-hover) !important;
+  --dsw-alias-button-elevated-fill: var(--cc-surface) !important;
+  --dsw-alias-button-floating-fill: var(--cc-surface) !important;
+  --dsw-alias-button-floating-hover: var(--cc-inset) !important;
+  --dsw-alias-interactive-bg-hover: var(--cc-hover) !important;
+  --dsw-alias-interactive-bg-active: var(--cc-hover) !important;
+  --dsw-alias-markdown-code-block: var(--cc-code) !important;
+  --dsw-alias-markdown-code-block-banner: var(--cc-inset) !important;
+  --dsw-alias-markdown-inline-code: var(--cc-inset) !important;
+  --dsw-specific-sidebar-fill: var(--cc-sidebar) !important;
+  --dsw-specific-input-major: var(--cc-surface) !important;
+  --dsw-specific-bubble: var(--cc-inset) !important;
+  --dsw-font-family: var(--cc-ui) !important;
+  --dsh-claude-canvas: var(--cc-canvas) !important;
+  --dsh-claude-sidebar-canvas: var(--cc-sidebar) !important;
+  --dsh-claude-card: var(--cc-surface) !important;
+  --dsh-claude-chip: var(--cc-inset) !important;
+  --dsh-claude-hover-bg: var(--cc-hover) !important;
+  --dsh-claude-divider: var(--cc-border) !important;
+  --dsh-claude-inline-code-bg: var(--cc-inset) !important;
+  --dsh-claude-inline-code-fg: var(--cc-code-ink) !important;
+  --dsh-claude-font-serif: var(--cc-serif) !important;
+  --dsh-claude-font-prose: var(--cc-ui) !important;
+  --dsh-claude-font-code: var(--cc-mono) !important;
+  --dsw-focus-ring-color: var(--cc-accent) !important;
+  color: var(--cc-ink);
+  background: var(--cc-canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+body[data-dsh-code-refined][data-dsh-claude-style][data-ds-dark-theme] {
+  --cc-canvas: #262624;
+  --cc-sidebar: #20201e;
+  --cc-surface: #30302d;
+  --cc-inset: #2e2e2a;
+  --cc-hover: #3a3933;
+  --cc-border: #45443d;
+  --cc-border-strong: #636156;
+  --cc-ink: #eeece4;
+  --cc-muted: #c0bcb0;
+  --cc-caption: #a29e92;
+  --cc-accent: #d97757;
+  --cc-accent-hover: #e38b6f;
+  --cc-code: #22221f;
+  --cc-code-ink: #e6a68b;
+  --cc-shadow: 0 2px 8px rgb(0 0 0 / 10%), 0 10px 28px rgb(0 0 0 / 8%);
+}
+
+/* Preserve desktop titlebar drag regions and native resizable pane widths. */
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-pane='sidebar'], [data-dsh-claude-part~='sidebar-column'], .dshDesktopSidebarSurface) {
+  background: var(--cc-sidebar) !important;
+  border-right-color: var(--cc-border) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-pane='conversation'], [data-dsh-claude-part~='center-column']) {
+  background: var(--cc-canvas) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-dsh-claude-part~='session-row'], button[data-dsh-claude-part~='panel-row']) {
+  min-height: 32px;
+  border-radius: 7px !important;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='session-row']:hover {
+  background: var(--cc-hover) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-dsh-claude-part~='row-selected'], [data-dsh-claude-part~='session-row'][aria-selected='true']) {
+  background: var(--cc-hover) !important;
+  color: var(--cc-ink) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-dsh-claude-part~='section-label'], .dsh-claude-date-header) {
+  color: var(--cc-caption);
+  font: 500 11px/18px var(--cc-ui);
+  letter-spacing: .025em;
+}
+
+/* Serif belongs to the greeting; task titles and code discussions stay sans. */
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='hero-headline'][data-dsh-claude-holds~='hero-mark'] {
+  font: 400 clamp(28px, 3.4vw, 40px)/1.25 var(--cc-serif) !important;
+  letter-spacing: -.035em;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='hero-title-group'],
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='hero-title-group'] > span {
+  font: inherit !important;
+  letter-spacing: inherit;
+}
+/* Recompose the base theme's studio home into a focused new-task screen.
+   Scope every geometry change to the hero, never an active conversation. */
+body[data-dsh-code-refined][data-dsh-claude-style] .dsh-claude-home-panel {
+  display: none !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-home-hero] [data-dsh-claude-part~='composer-seat'] {
+  flex: 0 0 auto !important;
+  margin-block: auto !important;
+  width: 100%;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-home-hero] [data-dsh-claude-part~='composer-stack'][data-dsh-claude-part~='composer-hero'] {
+  flex: 0 0 auto !important;
+  max-width: 752px !important;
+  gap: 18px !important;
+  padding-block: 24px 80px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-home-hero] [data-dsh-claude-part~='composer-hero'] > [data-dsh-claude-holds~='hero-headline'] {
+  padding-block: 0 10px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-home-hero] [data-dsh-claude-part~='hero-workspace-row'] {
+  margin-top: 0 !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-home-hero] [data-composer-input] {
+  min-height: 88px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='hero-mark']::before {
+  width: 34px !important;
+  height: 34px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-slot='conversation.header'] {
+  font-family: var(--cc-ui);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-slot='conversation.header'] :is(h1, h2, [data-dsh-claude-part~='text-title']) {
+  font-family: var(--cc-ui) !important;
+  font-weight: 550;
+}
+
+/* One quiet input card. Host handles typing, attachment layout and submission. */
+body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card] {
+  background: var(--cc-surface) !important;
+  border: 1px solid var(--cc-border) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--cc-shadow) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card]:focus-within {
+  border-color: var(--cc-border-strong) !important;
+  box-shadow: 0 0 0 1px var(--cc-border), var(--cc-shadow) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card] [data-input-scroll] {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 14px 16px 6px !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card] [data-dsh-claude-part~='row'] {
+  padding: 2px 50px 10px 12px !important;
+  min-height: 38px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card] button:is([data-dsh-claude-control='send'], [data-dsh-claude-control='stop']) {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 12px !important;
+  top: auto !important;
+  width: 30px !important;
+  height: 30px !important;
+  transform: none !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-composer-input] {
+  font-family: var(--cc-ui) !important;
+  line-height: 1.6;
+  caret-color: var(--cc-accent);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] button[data-dsh-claude-control='send']:not(:disabled) {
+  color: #fff !important;
+  background: var(--cc-accent) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card] button[data-dsh-claude-control='send']:not(:disabled):hover {
+  color: #fff !important;
+  background: var(--cc-accent-hover) !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] button[data-dsh-claude-control='send']:disabled {
+  opacity: .45;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] button[data-dsh-claude-control='stop'] {
+  border-radius: 8px !important;
+}
+
+/* Use the host's text-size preference, including its accessibility range. */
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] {
+  font-family: var(--cc-ui) !important;
+  line-height: 1.75 !important;
+  color: var(--cc-ink);
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] :is(h1, h2, h3, h4) {
+  font-family: var(--cc-ui) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.015em;
+  line-height: 1.4;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='markdown'] p {
+  margin-block: 10px;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is(pre, code, kbd) {
+  font-family: var(--cc-mono) !important;
+  font-variant-ligatures: none;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] pre {
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+
+/* Decorative layers only: never hide loaders, waiting text or action controls. */
+body[data-dsh-code-refined][data-dsh-claude-style] :is(.dsh-claude-crab, .dsh-claude-whale, .dsh-claude-whale-girl, .dsh-claude-home-ripple) {
+  display: none !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is([data-dsh-claude-part~='hero-mark'], [data-dsh-claude-part~='hero-title-group']) {
+  animation: none !important;
+}
+body[data-dsh-code-refined][data-dsh-claude-style] :is(button, a, [tabindex]):focus-visible {
+  outline: 2px solid var(--cc-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-part~='hero-headline'][data-dsh-claude-holds~='hero-mark'] {
+    font-size: 28px !important;
+    letter-spacing: -.02em;
+  }
+  body[data-dsh-code-refined][data-dsh-claude-style][data-dsh-claude-composer-active] [data-composer-card] {
+    border-radius: 13px !important;
+  }
+  body[data-dsh-code-refined][data-dsh-claude-style] [data-dsh-claude-home-hero] [data-dsh-claude-part~='composer-stack'][data-dsh-claude-part~='composer-hero'] {
+    padding-block: 16px 24px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-dsh-code-refined][data-dsh-claude-style] :is([data-composer-card], [data-dsh-claude-part~='session-row']) {
+    transition: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  body[data-dsh-code-refined][data-dsh-claude-style] {
+    --cc-canvas: Canvas;
+    --cc-sidebar: Canvas;
+    --cc-surface: Canvas;
+    --cc-inset: Canvas;
+    --cc-ink: CanvasText;
+    --cc-muted: CanvasText;
+    --cc-caption: CanvasText;
+    --cc-border: ButtonBorder;
+    --cc-border-strong: Highlight;
+  }
+}
